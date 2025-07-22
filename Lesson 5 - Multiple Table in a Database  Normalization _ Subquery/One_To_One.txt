@@ -1,0 +1,54 @@
+------ One to One ------ 
+
+USE AcademyDB
+
+
+CREATE TABLE Countries(
+	Id int Primary key identity(1,1),
+	[Name] nvarchar(30) not null
+)
+
+
+CREATE TABLE Capitals(
+	Id int Primary key identity(1,1),
+	[Name] nvarchar(30) not null,
+	[Population] float,
+
+	CountryId int UNIQUE FOREIGN KEY REFERENCES Countries(Id)
+)
+
+Select * from Countries
+Select * from Capitals
+
+
+Insert Countries Values
+('Russia'),
+('Turkiye')
+
+
+INSERT Capitals Values
+('Moskow', 189745, 1),
+('Ankara', 289745, 2)
+
+-- Cross Join
+
+
+SELECT cu.Id, cu.Name as CountryName , ca.Name as CapitalName, ca.Population 
+FROM Capitals as ca, Countries as cu
+WHERE ca.CountryId = cu.Id
+
+
+-------------------------------------------
+-- FK 3 cur table-a elave etmek olur
+
+-- 1. Aninda
+-- 2. Sonradan
+-- 3. Anindan Constaint adi ile 1 yerde
+
+
+ALTER TABLE Capitals
+DROP CONSTRAINT FK__Capitals__Countr__57DD0BE4
+
+
+ALTER TABLE Capitals
+ADD CONSTRAINT FK__Capitals__CountryID FOREIGN KEY(CountryId)  REFERENCES Countries(Id)

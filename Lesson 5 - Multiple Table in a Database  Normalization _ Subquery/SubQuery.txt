@@ -1,0 +1,39 @@
+------------------- SubQuery ------------------- 
+
+-- Ic ice yazilan queryler-dir.
+
+
+
+Use BooksDB
+
+-- Istifadeci Category adina gore Productlari gormek isteyir
+-- Beverages
+
+Select * 
+from Products as p
+where p.CategoryID = (
+	Select CategoryID from Categories
+	Where CategoryName = 'Produce'
+)
+
+
+
+Select * from Categories
+Where CategoryName = 'Beverages'
+
+
+
+-- ProductName,Price, CategoryName
+-- Yeni tek Where-de yox, hemde Select zamani subQuery istifade ede bilerik
+
+SELECT ProductName, UnitPrice, (
+	Select [CategoryName]
+	From Categories as c
+	where p.CategoryID = c.CategoryID
+)
+FROM Products as p
+
+
+Select * from Products
+
+select * from Categories

@@ -1,0 +1,32 @@
+----- Normalization
+
+-- 1 NF 
+-- 2 NF
+-- 3 NF
+-- Boyce codd ( 3.5	NF )
+-- 4 NF
+-- 5 NF
+-- DOMEIN
+-- 6 NF
+
+
+-- 1NF
+
+-- 1. Sutunlarin tekrarlana bilmez
+-- 2. Sutunlar atomar olmalidir.
+-- 3. Setirleri 1 - 1inden ferqlendirmek ucun nese olmalidir. PK ve ya Unique
+
+-- 2NF
+
+-- 1. 1NF yerine yetirilmelidir.
+-- 2. Setirler tekrarlanmamalidir.
+-- 3. Sutunlar PK ve ya basqa columdan asili ola biler.
+
+-- 3NF
+
+-- 1. 2NF yerine yetirilmelidir
+-- 2. Columnlar ancaq PK-den asili olmalidir!!!
+
+
+
+

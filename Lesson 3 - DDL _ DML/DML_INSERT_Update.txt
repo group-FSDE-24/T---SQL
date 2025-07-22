@@ -1,0 +1,19 @@
+
+select * from [dbo].[Students]
+
+
+INSERT INTO Students 
+Values('Kamran', null, null, 1, null, null, 8.9),
+('Karimzada', null, null, 1, null, null, 8.9)
+
+
+INSERT Students(FirstName,  Gender, Score) Values
+('Vugar', 1,  8.9),
+('Aydin', 1,  8.9)
+
+
+UPDATE Students
+SET FirstName = 'Narmin'
+WHERE Id = 6
+
+

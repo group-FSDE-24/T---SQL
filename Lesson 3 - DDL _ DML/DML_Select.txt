@@ -1,0 +1,44 @@
+-- DML
+
+Select * From AcademyDB.dbo.Products
+
+Select * FROM Products
+
+SELECT ProductName, UnitPrice FROM Products
+
+
+SELECT LastName, FirstName FROM Employees
+
+-- Task LastName, FirstName -> FullName
+
+SELECT LastName + ' ' + FirstName AS FullName FROM Employees
+
+
+SELECT Cast([EmployeeID]  as nvarchar) + ' ' + FirstName From Employees
+SELECT Cast([EmployeeID]  as nvarchar(30)) + ' ' + FirstName From Employees
+SELECT Cast([EmployeeID]  as char(4)) + ' ' + FirstName From Employees
+SELECT Str([EmployeeID]) + ' ' + FirstName From Employees
+SELECT LTrim(Str([EmployeeID])) + ' ' + FirstName From Employees
+
+
+Select UnitPrice from Products
+Order by UnitPrice desc
+
+Select TOP 10 UnitPrice from Products
+Order by UnitPrice desc
+
+
+
+Select TOP 1 UnitPrice from Products
+Order by UnitPrice desc
+
+
+
+Select TOP 1 WITH TIES * from Products
+Order by UnitPrice desc
+
+
+Select DISTINCT CategoryId from Products
+
+
+

@@ -1,0 +1,72 @@
+---- DDL ( Create, Alter, Drop, Truncate ) 
+
+
+
+
+
+--- DML ( Select, Insert, Update, Delete )
+
+
+
+CREATE DATABASE AcademyDB
+
+-- USE model
+
+-- DROP DATABASE AcademyDB
+
+-- KAMRAN /*kARIMZADA*/
+
+USE AcademyDB
+
+-------------------------------------------------------
+
+CREATE TABLE Students(
+	Id int PRIMARY KEY IDENTITY(1,1),
+	Firstname NVARCHAR(40) NOT NULL,
+	Lastname NVARCHAR(40),
+	Email nvarchar(60) null,
+	Gender bit not null,
+	DateOfBirth date,
+	[Group] nvarchar(30) null
+)
+
+-- DROP Table Students
+
+
+ALTER TABLE Students
+ADD Score int not null
+
+
+ALTER TABLE Students
+DROP Column Score
+
+
+ALTER TABLE Students
+ALTER Column Score float not null
+
+
+ALTER TABLE Students
+DROP CONSTRAINT PK__Students__3214EC0731C99054
+
+
+ALTER TABLE Students
+ADD CONSTRAINT PK__Students__Id Primary Key(Id)
+
+
+
+DELETE Students
+
+Truncate TABLE Students
+
+
+sp_rename 'NewStudents',  'Students'
+
+
+sp_rename 'Students.DateOfBirth', 'BirthDate', 'COLUMN'
+
+USE AcademyDB
+
+-- sp_rename 'AcademyDB', 'StepAcademyDB', 'DATABASE'
+
+
+

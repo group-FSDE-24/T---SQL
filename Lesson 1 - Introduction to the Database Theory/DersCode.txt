@@ -1,0 +1,18 @@
+
+Select * 
+from Students
+
+Select [Name], [Surname]
+from StepItAcademyDB.dbo.Students
+
+sElecT * 
+FroM Students
+Where Score > 10  and Surname='Aliyeva'
+
+sElecT * 
+FroM Students
+Where Score > 10  or Surname='Aliyeva'
+
+sElecT * 
+FroM Students
+Where Surname like '%x%'

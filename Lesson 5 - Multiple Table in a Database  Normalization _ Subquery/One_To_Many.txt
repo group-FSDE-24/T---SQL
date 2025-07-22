@@ -1,0 +1,50 @@
+------ One to Many ------ 
+
+CREATE DATABASE AcademyDB
+
+USE AcademyDB
+
+
+CREATE TABLE Groups(
+	Id int Primary key identity(1,1),
+	[Name] nvarchar(30) not null,
+	CreatedDate datetime2
+)
+
+
+CREATE TABLE Students(
+	Id int Primary key identity(1,1),
+	[Firstname] nvarchar(30) not null,
+	[Lastname] nvarchar(30) not null,
+	DateOfBirth smalldatetime,
+	Score float,
+	GroupId int FOREIGN KEY REFERENCES Groups(Id)
+)
+
+Select * from Students
+Select * from Groups
+
+
+Insert Groups Values
+('FSDE_Oct_24_6_az', '2024-10-29'),
+('FSDE_Oct_24_7_az', '2024-11-15')
+
+
+INSERT Students Values
+('Burhan', 'Orucov', null, null, 1),
+('Aydin', 'Akberov', null, null, 1),
+('Vuqar', 'Hesenli', null, null, 1),
+('Kamran', 'Karimli', null, null, 2)
+
+
+-- Cross Join
+
+
+SELECT Firstname, Lastname, g.Name as groupName
+FROM Students as s, Groups as g
+WHERE g.Id = s.GroupId
+
+
+
+
+

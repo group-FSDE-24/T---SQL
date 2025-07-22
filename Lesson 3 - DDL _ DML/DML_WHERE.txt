@@ -1,0 +1,106 @@
+-- WHERE
+
+--- Komadalarin yazilma ardicilligi
+
+
+-- Select
+-- From
+-- WHERE
+-- Order by
+
+-- Operators
+
+-- >
+-- <
+-- >=
+-- <=
+-- != | <>
+-- =
+
+Select * from Employees
+WHERE [EmployeeID] = 5
+
+
+Select * from Employees
+WHERE [EmployeeID] > 5
+
+Select * from Employees
+WHERE [EmployeeID] <> 5
+
+
+Select * from Employees
+WHERE [LastName] = 'Davolio'
+
+
+Select * from Employees
+Where Region is not null
+
+
+SELECT * FROM [dbo].[Categories]
+WHERE AcademyDB.dbo.Categories.[Description] Like 'Cheeses'
+
+
+SELECT * FROM [dbo].[Categories]
+WHERE LEN([CategoryName]) > 10
+
+
+SELECT * FROM [dbo].[Employees]
+WHERE YEAR([BirthDate]) > 1948
+
+SELECT * FROM [dbo].[Employees]
+WHERE Month([BirthDate]) > 10
+
+
+SELECT * FROM [dbo].[Employees]
+WHERE Day([BirthDate]) > 20
+
+
+-- AND, OR
+
+SELECT * FROM [dbo].[Employees]
+WHERE [LastName] = 'Davolio' OR [TitleOfCourtesy] = 'Ms.'
+
+
+SELECT * FROM [dbo].[Employees]
+WHERE [Title] = 'Sales Representative' AND  [FirstName] = 'Janet'
+
+
+SELECT * FROM [dbo].[Employees]
+ORDER BY [TitleOfCourtesy]
+
+
+SELECT * FROM [dbo].[Employees]
+ORDER BY [TitleOfCourtesy], [BirthDate]
+
+-- IN, BETWEEN, LIKE
+
+SELECT * FROM [Employees]
+WHERE [EmployeeID] IN (1,3,4,5,6)
+
+
+SELECT * FROM [Employees]
+WHERE  [EmployeeID] BETWEEN 1 and 5
+
+
+-- LIKE
+
+SELECT * FROM [dbo].[Categories]
+WHERE [CategoryName] LIKE 'Beverages'
+
+
+SELECT * FROM [dbo].[Categories]
+WHERE [CategoryName] LIKE 'B%'
+
+SELECT * FROM [dbo].[Categories]
+WHERE [CategoryName] LIKE '%A%'
+
+
+SELECT * FROM [dbo].[Categories]
+WHERE [CategoryName] LIKE '_e%'
+
+SELECT * FROM [dbo].[Categories]
+WHERE [CategoryName] LIKE '%e_'
+
+
+
+

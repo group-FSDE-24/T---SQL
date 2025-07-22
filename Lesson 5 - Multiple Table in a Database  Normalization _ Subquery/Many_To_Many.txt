@@ -1,0 +1,65 @@
+------ Many to Many ------ 
+
+USE AcademyDB
+
+
+CREATE TABLE Authors(
+	Id int Primary key identity(1,1),
+	[Firstname] nvarchar(30) not null,
+	[Lastname] nvarchar(30) not null,
+	DateofBirht date 
+)
+
+
+CREATE TABLE Books(
+	Id int Primary key identity(1,1),
+	[Name] nvarchar(30) not null,
+	[Pages] int not null,
+	Genre nvarchar(30) not null,
+	[Price] float
+
+)
+
+CREATE TABLE Authors_Books(
+	BooksId int FOREIGN KEY References Books(Id),
+	AuthorsId int FOREIGN KEY References Authors(Id)
+)
+
+
+Select * from Authors
+Select * from Books
+select * from Authors_Books
+
+Insert Authors Values
+('Kamran', 'Karimzada', null),
+('Burhan', 'Orucov', '2009-11-17'),
+('Aydin', 'Akberov', null)
+
+
+INSERT Books Values
+('Cesur Urey', 789, 'Dram', 99.85),
+('Tarixi Nadir', 489, 'Tarixi', 9.85),
+('Karlson', 819, 'Komedi', 29.85),
+('Serlock', 289, 'Dedektiv', 199.85),
+('1984', 919, 'Fantazi', 23.85)
+
+
+Insert Authors_Books Values
+(1, 1),
+(1, 2),
+(2, 3),
+(3, 2),
+(4, 1),
+(5, 1),
+(5, 2), 
+(5, 3)
+
+-- Cross Join
+
+
+SELECT  a.Firstname, a.Lastname, b.Name, b.Genre, b.Price, b.Pages
+FROM Authors as a, Books as b, Authors_Books as ab
+WHERE a.Id = ab.AuthorsId and b.Id = ab.BooksId
+
+
+-------------------------------------------
